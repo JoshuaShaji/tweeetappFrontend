@@ -1,0 +1,31 @@
+<body>
+    <div class="wrapper">
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-md-offset-3">
+                <h2 style="margin-left: 80px; width: 250px ;">Create Post</h2>
+                <br>
+                <div class="alert alert-danger" *ngIf="error">
+                    {{error}}
+                </div>
+                <form #formdata="ngForm" (ngSubmit)="onSubmit(formdata)">
+
+                    <div class="form-group">
+                        <label for="message">Tweet Message</label>
+                        <textarea id="message" class="form-control" ngModel required name="message"
+                            #message="ngModel" placeholder="Enter the Post content here....." minlength="1" maxlength="144"></textarea>
+                        <span class="help-block " style="color: #fff;" *ngIf="!message.valid && message.touched">Please enter the Post content of maximum 144 characters!</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-success" [disabled]="!formdata.valid" type="submit">Submit Post</button>
+                    </div>
+                </form>
+                <br>
+                <div class="alert alert-success" 
+                style="width: 300px; ;"
+                *ngIf="success"> Post Created Successfully !!
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

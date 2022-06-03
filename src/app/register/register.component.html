@@ -1,0 +1,52 @@
+<div class="row" style=" background-color: #e1e59d;  height: 100vh;">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <div class="alert alert-danger" *ngIf="error">
+      {{error}}
+    </div>
+    <form #formdata="ngForm" (ngSubmit)="onSubmit(formdata)">
+      <div class="form-group">
+        <label for="firstName">First Name </label>
+        <input type="text" id="firstName" class="form-control" ngModel required name="firstName" #firstName="ngModel" />
+        <span class="help-block" *ngIf="!firstName.valid && firstName.touched">Please enter the First Name !</span>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" class="form-control" ngModel required name="lastName" #lastName="ngModel" />
+        <span class="help-block" *ngIf="!lastName.valid && lastName.touched">Please enter the Last Name !</span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" class="form-control" ngModel required email name="email" #email="ngModel" />
+        <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid Email !</span>
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" class="form-control" ngModel required name="username" #username="ngModel" />
+        <span class="help-block" *ngIf="!username.valid && username.touched">Please enter a Username !</span>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" ngModel required minlength="6" name="password"
+          #password="ngModel" />
+        <span class="help-block" *ngIf="!password.valid && password.touched">Please enter Password of minimum 6
+          character !</span>
+      </div>
+      <div class="form-group">
+        <label for="contactNumber">Contact Number</label>
+        <input type="tel" id="contactNumber" class="form-control" ngModel required pattern="[8-9]{1}[0-9]{9}"
+          name="contactNumber" #contactNumber="ngModel" />
+        <span class="help-block" *ngIf="!contactNumber.valid && contactNumber.touched">Please enter Contact
+          number !</span>
+
+      </div>
+
+      <div>
+        <button class="btn btn-primary" [disabled]="!formdata.valid" type="submit">Register</button>
+      </div>
+    </form>
+    <br>
+    <div class="alert alert-success" *ngIf="success"> Your Registration is Successful
+    </div>
+  </div>
+</div>

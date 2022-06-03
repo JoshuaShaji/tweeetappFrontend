@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+.nav>li>a:focus, .nav>li>a:hover {
+    
+    text-decoration: underline;
+    background-color: #1da1f2 !important;
+
+}

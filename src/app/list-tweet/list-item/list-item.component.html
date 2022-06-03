@@ -1,0 +1,22 @@
+<li class="list-group-item"  style="background-color: #ffd900;">
+    <span class="badge pull-left">{{i+1}}</span>
+    <span class="label pull-right"  style="background-color: blueviolet;">{{tweet.createdDateTime}}</span>
+
+
+    &nbsp;&nbsp;
+    {{tweet.message}}
+    <br>
+    <br>
+    <span style='color:white;' class="pull-right btn btn-danger" (click)="onSelcted(tweet.id)">Delete</span>
+    <button class="btn " style="background-color:#1da1f2; color:white;" (click)="onEdit()">Edit</button><br>
+    <div *ngIf="a">
+        <br>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" [(ngModel)]="updatedTweet" min="1" required placeholder="Enter the Tweet here ...">
+        </div>
+        &nbsp;&nbsp;<button class="btn btn-primary" (click)="onSubmit(tweet.id)">Submit</button>&nbsp;
+        <button class="btn btn-primary" (click)="onClose()">Close</button>
+    </div>
+
+</li>
+<br>

@@ -1,0 +1,16 @@
+<div class="panel panel-info" style="border: 1px solid #ffd900;">
+    <div class="panel-heading"  style="background-color: #ffd900;">
+        <h3>{{tweet.username}}</h3></div>
+    <div class="panel-body">{{tweet.message}}</div>
+    <div style="margin-bottom:2% ;">
+        &nbsp;
+        <!-- <button type="button" class="btn btn-default btn-sm" (click)="onTweetLike(tweet.id)">
+            <span class="glyphicon glyphicon-thumbs-up"></span> Like
+          </button> &nbsp; -->
+          <!-- <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-thumbs-down"></span> Unlike
+          </button> -->
+          <span class="label pull-right" style="margin-right:2% ; background-color: blueviolet;">Created on {{tweet.createdDateTime| date}}</span>
+          &nbsp;
+    </div>
+  </div>

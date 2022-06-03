@@ -1,0 +1,14 @@
+<body style="background-color: #e1e59d; height: 100vh;">
+<div class="container">
+    <div class="row" style="margin-top:5%;margin-left: 15%;">
+        <div class="col-md-10" >
+            <ul class="list-group">
+                <app-list-item *ngFor="let tweet of tweet; let i = index" [tweet]="tweet" [i]="i"
+                (value) ="onEdit($event)" (selected) = "onSelect($event)"></app-list-item>
+            </ul>
+
+        </div>
+    </div>
+</div>
+    
+</body>

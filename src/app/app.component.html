@@ -1,0 +1,26 @@
+<nav class="navbar navbar-btn" style="background-color: #721105; margin: 0px auto;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-text" style="font-size:x-large; color:#fff;">Tweet App</a>
+    </div>
+    <div>
+    <ul class="nav navbar-nav navbar-right" style="font-size:large; color:#fff;">
+      <li routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'><a style="color:#fff;" routerLink="/">Home</a></li>
+      <li  routerLinkActive="active" *ngIf="!isAuthenticated"><a style="color:#fff;" routerLink="/register">Register</a></li>
+      <li  routerLinkActive="active" *ngIf="!isAuthenticated"><a style="color:#fff;" routerLink="/login">Login</a></li>
+      <li  routerLinkActive="active" *ngIf="isAuthenticated"><a style="color:#fff;"  routerLink="/posttweet">Post Tweet</a></li>
+     <li  routerLinkActive="active" *ngIf="isAuthenticated"><a style="color:#fff;" routerLink="/alltweet">View all Tweets</a></li>
+      <li  routerLinkActive="active" *ngIf="isAuthenticated"><a style="color:#fff;" routerLink="/mytweet">View My Posts</a></li>
+      <li routerLinkActive="active" *ngIf="isAuthenticated" ><a style="color:#fff;" (click)="OnLogout()">Logout</a></li>
+    </ul>
+  </div>
+    <!-- <ul class="nav navbar-nav" style="margin-right: 5%;">
+             <li routerLinkActive="active" *ngIf="isAuthenticated" ><a (click)="OnLogout()">Logout</a></li>
+    </ul> -->
+
+
+
+
+  </div>
+</nav>
+<router-outlet></router-outlet>
